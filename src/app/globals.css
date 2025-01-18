@@ -29,8 +29,6 @@ body {
   flex-direction: column;
 }
 
-
-
 #page-bottom {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
@@ -59,6 +57,42 @@ body {
   font-weight: lighter;
   font-size: 87.5%;
   line-height: 1.7rem;
+}
+
+#feedback-social-links {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  background-color: var(--color-black);
+  color: var(--color-white);
+  padding: 2%;
+  justify-items: center;
+  align-items: center;
+  padding-left: 8rem;
+  padding-right: 4.6rem;
+}
+
+#social-links-buttons {
+  padding-top: 1%;
+}
+
+#feedback {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 0.5rem;
+}
+
+#feedback-header {
+  font-size: 95%;
+  font-weight: lighter;
+}
+
+
+#social-links-header {
+  font-weight: bold;
+  font-size: 95%;
+  text-align: center;
+  padding-right: 0.4rem;
+  padding-bottom: 0.2rem;
 }
 
 footer {
