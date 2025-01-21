@@ -29,82 +29,26 @@ body {
   flex-direction: column;
 }
 
-#page-bottom {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  text-align: left;
-  background-color: var(--color-black);
-  color: var(--color-white);
-}
+@layer components {
+  .p-small {
+    padding: 0.2%;
+  }
 
-.grab-deals-layout, .about-us-layout, .assurance-layout, .francise-layout {
-  padding-top: 14%;
-  padding-left: 28%;
-}
+  .menu-header {
+    font-size: 125%;
+    font-weight: bold;
+  }
 
-.grab-deals-layout {
-  padding-left: 32%;
-}
+  .menu {
+    padding-top: 3%;
+    padding-left: 0.5%;
+    font-weight: lighter;
+    font-size: 87.5%;
+    line-height: 1.7rem;
+  }
 
-.grab-deals-header, .about-us-header, .assurance-header, .francise-header {
-  font-size: 125%;
-  font-weight: bold;
-}
-
-.grab-deals-menu, .about-us-menu, .assurance-menu, .francise-menu{
-  padding-top: 3%;
-  padding-left: 0.5%;
-  font-weight: lighter;
-  font-size: 87.5%;
-  line-height: 1.7rem;
-}
-
-#feedback-social-links {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  background-color: var(--color-black);
-  color: var(--color-white);
-  padding: 2%;
-  justify-items: center;
-  align-items: center;
-  padding-left: 8rem;
-  padding-right: 4.6rem;
-}
-
-#social-links-buttons {
-  padding-top: 1%;
-}
-
-#feedback {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 0.5rem;
-}
-
-#feedback-header {
-  font-size: 95%;
-  font-weight: lighter;
-}
-
-
-#social-links-header {
-  font-weight: bold;
-  font-size: 95%;
-  text-align: center;
-  padding-right: 0.4rem;
-  padding-bottom: 0.2rem;
-}
-
-footer {
-  color: var(--color-chineseSilver);
-  background-color: var(--color-black);
-  text-align: center;
-  font-size: small;
-  font-weight: lighter;
-  font-family: 'Heebo';
-  padding: 1%;
-}
-
-.footer-message, .footer-rights {
-  padding: 0.2%;
+  .list {
+    padding-top: 14%;
+    padding-left: 28%;
+  }
 }

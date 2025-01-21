@@ -1,10 +1,10 @@
-const Francise = () => {
+const FranciseList = () => {
     return (
-        <div className="layout francise-layout" id="francise">
-            <div className="layout-header francise-header">
+        <div className="list" id="francise-list">
+            <div className="menu-header">
                 <p>Francise</p>
             </div>
-            <div className="francise-menu">
+            <div className="menu">
                 <ul className="menu-list">
                     <li className="menu-item"><a href="/">Discover</a></li>
                     <li className="menu-item"><a href="/">Steps to Own</a></li>
@@ -14,4 +14,4 @@ const Francise = () => {
     );
 };
 
-export default Francise;
+export default FranciseList;

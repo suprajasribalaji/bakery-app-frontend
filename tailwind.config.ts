@@ -11,6 +11,12 @@ export default {
       colors: {
         background: "var(--background)",
         foreground: "var(--foreground)",
+        black: "var(--color-black)",
+        white: "var(--color-white)",
+        chineseSilver: "var(--color-chineseSilver)",
+      },
+      fontFamily: {
+        heebo: ['Heebo', 'sans-serif'],
       },
     },
   },
