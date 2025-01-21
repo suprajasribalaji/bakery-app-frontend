@@ -1,10 +1,10 @@
-const AboutUs = () => {
+const AboutUsList = () => {
     return (
-        <div className="about-us-layout" id="about-us">
-            <div className="about-us-header">
+        <div className="list" id="about-us-list">
+            <div className="menu-header">
                 <p>About us</p>
             </div>
-            <div className="about-us-menu">
+            <div className="menu">
                 <ul className="menu-list">
                     <li className="menu-item"><a href="/">About us</a></li>
                     <li className="menu-item"><a href="/">Idea to Plate</a></li>
@@ -14,4 +14,4 @@ const AboutUs = () => {
     );
 };
 
-export default AboutUs;
+export default AboutUsList;

@@ -1,5 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Heebo:wght@300&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@400&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@400&display=swap');
 
 @tailwind base;
 @tailwind components;
@@ -8,11 +9,13 @@
 :root {
   --background: #ffffff;
   --foreground: #171717;
-  --color-black : #000000;
+  --color-black: #000000;
   --color-white: #FFFFFF;
   --color-chineseSilver: #C7C7C7CC;
   --color-cloudGray: #E8E6E6;
   --color-brightRed: #E21C21;
+  --color-emeraldGreen600: #059669;
+  --color-emeraldGreen700: #047857;
 }
 
 @media (prefers-color-scheme: dark) {
@@ -26,7 +29,7 @@ body {
   color: var(--foreground);
   background: var(--background);
   font-family: Arial, Helvetica, sans-serif;
-  height: 100vh; /* Ensure the body covers the full viewport height */
+  height: 100vh;
   width: 100%;
   display: flex;
   flex-direction: column;
@@ -34,132 +37,59 @@ body {
 
 /*    main page - outer   */
 
-#page-bottom {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  text-align: left;
-  background-color: var(--color-black);
-  color: var(--color-white);
-}
+@layer components {
+  .p-small {
+    padding: 0.2%;
+  }
 
-/*    main page feedback and social link    */
+  .menu-header {
+    font-size: 125%;
+    font-weight: bold;
+  }
 
-#feedback-social-link {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  background-color: var(--color-black);
-  color: var(--color-white);
-  padding: 2%;
-  justify-items: center;
-  align-items: center;
-  padding-left: 8rem;
-  padding-right: 4.6rem;
-}
+  .menu {
+    padding-top: 3%;
+    padding-left: 0.5%;
+    font-weight: lighter;
+    font-size: 87.5%;
+    line-height: 1.7rem;
+  }
 
-#feedback-icon {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 0.5rem;
-}
+  .list {
+    padding-top: 14%;
+    padding-left: 28%;
+  }
 
-#feedback-header {
-  font-size: 95%;
-  font-weight: lighter;
-}
-
-#social-link-header {
-  font-weight: bold;
-  font-size: 95%;
-  text-align: center;
-  padding-right: 0.4rem;
-  padding-bottom: 0.2rem;
-}
-
-#social-link-button {
-  padding-top: 1%;
-}
-
-/*    main page footer    */
-
-footer {
-  color: var(--color-chineseSilver);
-  background-color: var(--color-black);
-  text-align: center;
-  font-size: small;
-  font-weight: lighter;
-  font-family: 'Heebo';
-  padding: 1%;
-}
-
-.footer-message, .footer-rights {
-  padding: 0.2%;
-}
-
-/*    components - GrabDeals, Francise, Assurance, AboutUs    */
-
-.grab-deals-layout, .about-us-layout, .assurance-layout, .francise-layout {
-  padding-top: 14%;
-  padding-left: 28%;
-}
-
-.grab-deals-layout {
-  padding-left: 32%;
-}
-
-.grab-deals-header, .about-us-header, .assurance-header, .francise-header {
-  font-size: 125%;
-  font-weight: bold;
-}
-
-.grab-deals-menu, .about-us-menu, .assurance-menu, .francise-menu{
-  padding-top: 3%;
-  padding-left: 0.5%;
-  font-weight: lighter;
-  font-size: 87.5%;
-  line-height: 1.7rem;
-}
-
-/*    Feedback page    */
-
-.feedback-div {
-  background-color: var(--color-cloudGray);
-  height: 130vh;
-  width: 100%;
-  font-family: 'Open Sans', sans-serif;
-}
-
-.feedback-header {
-  text-align: center;
-  padding-top: 3%;
-}
-
-.header {
-  font-size: 170%;
-  font-weight: bolder;
-  letter-spacing: 0.05em;
-  color: var(--color-brightRed);
-}
-
-.feedback-content {
-  padding: 5% 18%;
-}
-
-.feedback-sub-header {
-  font-weight: bolder;
-  font-size: 116%;
-  letter-spacing: 0.03em;
-}
-
-.feedback-about {
-  padding-top: 2%;
-  font-size: 90%;
-}
-
-.feedback-form {
-  padding-top: 5%;
-  font-size: 82% ;
-}
-
-.form {
-  width: 95%;
+  .label {
+    margin-right: 1rem;
+    font-size: 0.75rem;
+    padding-bottom: 0.5rem;
+  }
+  
+  .input-flex {
+    display: flex;
+    flex-wrap: wrap;
+  }
+  
+  .display-grid {
+    display: grid;
+    grid-template-columns: repeat(1, minmax(0, 1fr));
+  }
+  
+  @media (min-width: 768px) {
+    .display-grid {
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
+  }
+  
+  .radio-button-div {
+    margin-bottom: 1.25rem;
+    padding-bottom: 0.5rem;
+  }
+  
+  .message-and-button {
+    font-size: 0.75rem;
+    border-radius: 0.5rem;
+  }
+  
 }

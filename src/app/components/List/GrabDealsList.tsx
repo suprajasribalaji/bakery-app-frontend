@@ -1,10 +1,10 @@
-const GrabDealsLayout = () => {
+const GrabDealsList = () => {
     return (
-      <div className="grab-deals-layout" id="grab-deals">
-        <div className="grab-deals-header">
+      <div className="list pl-[32%]" id="grab-deals-list">
+        <div className="menu-header">
           <p>Grab Deals</p>
         </div>  
-        <div className="grab-deals-menu">
+        <div className="menu">
           <ul className="menu-list">
             <li className="menu-item"><a href="/">Deals</a></li>
             <li className="menu-item"><a href="/">Pizza</a></li>
@@ -21,4 +21,4 @@ const GrabDealsLayout = () => {
     );
 };
 
-export default GrabDealsLayout;
+export default GrabDealsList;

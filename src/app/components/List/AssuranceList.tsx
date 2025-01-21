@@ -1,10 +1,10 @@
-const Assurance = () => {
+const AssuranceList = () => {
     return (
-        <div className="assurance-layout" id="assurance">
-            <div className="assurance-header">
+        <div className="list" id="assurance-list">
+            <div className="menu-header">
                 <p>Assurance</p>
             </div>
-            <div className="assurance-menu">
+            <div className="menu">
                 <ul className="menu-list">
                     <li className="menu-item"><a href="/">Policies</a></li>
                     <li className="menu-item"><a href="/">Terms & Conditions</a></li>
@@ -15,4 +15,4 @@ const Assurance = () => {
     );
 };
 
-export default Assurance;
+export default AssuranceList;

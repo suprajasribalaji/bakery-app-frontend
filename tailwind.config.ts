@@ -11,6 +11,17 @@ export default {
       colors: {
         background: "var(--background)",
         foreground: "var(--foreground)",
+        black: "var(--color-black)",
+        white: "var(--color-white)",
+        chineseSilver: "var(--color-chineseSilver)",
+        cloudGray: "var(--color-cloudGray)",
+        brightRed: "var(--color-brightRed)",
+        emeraldGreen600: "var(--color-emeraldGreen600)",
+        emeraldGreen700: "var(--color-emeraldGreen700)",
+      },
+      fontFamily: {
+        heebo: ['Heebo', 'sans-serif'],
+        openSans: ['Open Sans', 'sans-serif'],
       },
     },
   },
