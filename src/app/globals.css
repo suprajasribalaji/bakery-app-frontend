@@ -1,4 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Heebo:wght@300&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@400&display=swap');
 
 @tailwind base;
 @tailwind components;
@@ -10,6 +11,8 @@
   --color-black : #000000;
   --color-white: #FFFFFF;
   --color-chineseSilver: #C7C7C7CC;
+  --color-cloudGray: #E8E6E6;
+  --color-brightRed: #E21C21;
 }
 
 @media (prefers-color-scheme: dark) {
@@ -29,6 +32,8 @@ body {
   flex-direction: column;
 }
 
+/*    main page - outer   */
+
 #page-bottom {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
@@ -36,6 +41,61 @@ body {
   background-color: var(--color-black);
   color: var(--color-white);
 }
+
+/*    main page feedback and social link    */
+
+#feedback-social-link {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  background-color: var(--color-black);
+  color: var(--color-white);
+  padding: 2%;
+  justify-items: center;
+  align-items: center;
+  padding-left: 8rem;
+  padding-right: 4.6rem;
+}
+
+#feedback-icon {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 0.5rem;
+}
+
+#feedback-header {
+  font-size: 95%;
+  font-weight: lighter;
+}
+
+#social-link-header {
+  font-weight: bold;
+  font-size: 95%;
+  text-align: center;
+  padding-right: 0.4rem;
+  padding-bottom: 0.2rem;
+}
+
+#social-link-button {
+  padding-top: 1%;
+}
+
+/*    main page footer    */
+
+footer {
+  color: var(--color-chineseSilver);
+  background-color: var(--color-black);
+  text-align: center;
+  font-size: small;
+  font-weight: lighter;
+  font-family: 'Heebo';
+  padding: 1%;
+}
+
+.footer-message, .footer-rights {
+  padding: 0.2%;
+}
+
+/*    components - GrabDeals, Francise, Assurance, AboutUs    */
 
 .grab-deals-layout, .about-us-layout, .assurance-layout, .francise-layout {
   padding-top: 14%;
@@ -59,52 +119,47 @@ body {
   line-height: 1.7rem;
 }
 
-#feedback-social-links {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  background-color: var(--color-black);
-  color: var(--color-white);
-  padding: 2%;
-  justify-items: center;
-  align-items: center;
-  padding-left: 8rem;
-  padding-right: 4.6rem;
+/*    Feedback page    */
+
+.feedback-div {
+  background-color: var(--color-cloudGray);
+  height: 130vh;
+  width: 100%;
+  font-family: 'Open Sans', sans-serif;
 }
 
-#social-links-buttons {
-  padding-top: 1%;
-}
-
-#feedback {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 0.5rem;
-}
-
-#feedback-header {
-  font-size: 95%;
-  font-weight: lighter;
-}
-
-
-#social-links-header {
-  font-weight: bold;
-  font-size: 95%;
+.feedback-header {
   text-align: center;
-  padding-right: 0.4rem;
-  padding-bottom: 0.2rem;
+  padding-top: 3%;
 }
 
-footer {
-  color: var(--color-chineseSilver);
-  background-color: var(--color-black);
-  text-align: center;
-  font-size: small;
-  font-weight: lighter;
-  font-family: 'Heebo';
-  padding: 1%;
+.header {
+  font-size: 170%;
+  font-weight: bolder;
+  letter-spacing: 0.05em;
+  color: var(--color-brightRed);
 }
 
-.footer-message, .footer-rights {
-  padding: 0.2%;
+.feedback-content {
+  padding: 5% 18%;
+}
+
+.feedback-sub-header {
+  font-weight: bolder;
+  font-size: 116%;
+  letter-spacing: 0.03em;
+}
+
+.feedback-about {
+  padding-top: 2%;
+  font-size: 90%;
+}
+
+.feedback-form {
+  padding-top: 5%;
+  font-size: 82% ;
+}
+
+.form {
+  width: 95%;
 }

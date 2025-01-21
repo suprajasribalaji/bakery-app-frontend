@@ -1,10 +1,14 @@
+"use client"
+
 import AboutUs from "./components/AboutUs/layout";
 import Francise from "./components/Francise/layout";
 import GrabDealsLayout from "./components/GrabDeals/layout";
 import Assurance from "./components/Assurance/layout";
+import { useRouter } from "next/navigation";
 
 const Home = () => {
   let year = new Date().getFullYear();
+  let router = useRouter();
   return (
     <>
       <div id="page-bottom">
@@ -13,18 +17,20 @@ const Home = () => {
         <Assurance />
         <Francise />
       </div>
-      <div id="feedback-social-links">
-        <div id="feedback">
+      <div id="feedback-social-link">
+        <div id="feedback-icon">
           <p id="feedback-header">Partner with us to improve</p>
           <button className="flex items-center justify-center p-0 w-6 h-6 bg-zinc-400 rounded-full hover:bg-white"
-            style={{ backgroundImage: 'url(/arrow-right.png)', backgroundSize: 'cover', backgroundPosition: 'center', border: 'none' }}>
+            style={{ backgroundImage: 'url(/arrow-right.png)', backgroundSize: 'cover', backgroundPosition: 'center', border: 'none' }}
+            onClick={() => router.push('/feedback')}
+          >
           </button>
         </div>
-        <div id="social-links">
-          <div id="social-links-header">
+        <div id="social-link-icon">
+          <div id="social-link-header">
             <p>Follow us</p>
           </div>
-          <div id="social-links-buttons">
+          <div id="social-link-button">
             <div className="flex space-x-2">
               <button className="flex items-center justify-center p-0 w-8 h-8 bg-zinc-400 rounded-full hover:bg-white"
                 style={{ backgroundImage: 'url(/instagram.png)', backgroundSize: 'cover', backgroundPosition: 'center', border: 'none' }}>
