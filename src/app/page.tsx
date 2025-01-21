@@ -1,7 +1,12 @@
-export default function Home() {
+import Footer from "./components/Footer/Footer";
+
+const Home = () => {
+  let year = new Date().getFullYear();
   return (
     <>
-      Welcome
+      <Footer />
     </>
   );
-}
+};
+
+export default Home;
