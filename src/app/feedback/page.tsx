@@ -7,9 +7,8 @@ const Feedback = () => {
     return (
         <div id="feedback" className="feedback">
             <div className="home-navbar">
-
             </div>
-            <div className="bg-[--color-cloudGray] h-[130vh] w-full font-openSans">
+              <div className="bg-[--color-cloudGray] h-[130vh] w-full font-openSans">
                 <div className="text-center pt-[3%]">
                     <h1 className="text-[170%] font-extrabold tracking-wide text-[--color-brightRed]">FEEDBACK</h1>
                 </div>
