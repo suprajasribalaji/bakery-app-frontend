@@ -52,9 +52,8 @@ const NavBar = () => {
                             className="absolute top-full -left-32 mt-3 z-10 font-normal bg-white divide-y divide-gray-100 rounded-lg shadow w-44 dark:bg-gray-700 dark:divide-gray-600"
                         >
                             <ul className="text-sm text-gray-700 dark:text-gray-400" aria-labelledby="dropdownLargeButton">
-                                <NavBarList href="/" className="navbar-profile-list" aria_current={undefined} name="Account Settings" />
-                                <NavBarList href="/" className="navbar-profile-list" aria_current={undefined} name="My Orders" />
-                                <NavBarList href="/" className="" aria_current={undefined} name="" />
+                                <NavBarList href="/" className="navbar-profile-list" name="Account Settings" />
+                                <NavBarList href="/" className="navbar-profile-list" name="My Orders" />
                             </ul>
                             <div>
                                 <a href="/" className="block px-4 py-2 text-sm text-gray-700 hover:text-oliveGreen dark:text-gray-200 dark:hover:text-white">Log out</a>
@@ -67,19 +66,16 @@ const NavBar = () => {
                         <NavBarList
                             href="/"
                             className="block py-2 px-3 text-white bg-darOliveGreen rounded md:bg-transparent md:text-darkOliveGreen md:p-0 md:dark:text-darkOliveGreen text-[96%] font-[Arial]"
-                            aria-current="page"
                             name="Menu"
                         />
                         <NavBarList
                             href="/"
                             className="navbar-list"
-                            aria_current={undefined}
                             name="Order"
                         />
                         <NavBarList
                             href="/feedback"
                             className="navbar-list"
-                            aria_current={undefined}
                             name="Feedback"
                         />
                         <a href="/" className="flex items-center rtl:space-x-reverse gap-2">
