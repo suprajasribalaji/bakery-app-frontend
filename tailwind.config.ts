@@ -14,6 +14,8 @@ export default {
         black: "var(--color-black)",
         white: "var(--color-white)",
         chineseSilver: "var(--color-chineseSilver)",
+        oliveGreen: "var(--color-oliveGreen)",
+        darkOliveGreen: "var(--color-darkOliveGreen)",
       },
       fontFamily: {
         heebo: ['Heebo', 'sans-serif'],
