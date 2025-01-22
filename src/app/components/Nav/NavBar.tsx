@@ -15,7 +15,7 @@ const NavBar = () => {
         <nav className="w-full h-[14%] bg-white border-gray-200 dark:bg-gray-900">
             <div className="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-3">
                 <a href="/" className="flex items-center rtl:space-x-reverse">
-                    <img src="/bakery-name.png" className="h-16 w-48 -ml-12" alt="bakery Logo" />
+                    <img src="/bakery-name.png" className="h-16 w-56 -ml-10 pt-2" alt="bakery Logo" />
                 </a>
                 <div className="flex items-center md:order-2 space-x-3 md:space-x-0 rtl:space-x-reverse mt-3 relative"> {/* Add relative here */}
                     <button
@@ -61,11 +61,11 @@ const NavBar = () => {
                         </div>
                     )}
                 </div>
-                <div className="items-center pl-[58%] pt-4 hidden w-full md:flex md:w-auto md:order-1" id="navbar-user">
+                <div className="items-center pl-[54%] pt-4 hidden w-full md:flex md:w-auto md:order-1" id="navbar-user">
                     <ul className="flex flex-col font-medium p-4 md:p-0 mt-4 border border-gray-100 rounded-lg bg-gray-50 md:space-x-8 rtl:space-x-reverse md:flex-row md:mt-0 md:border-0 md:bg-white dark:bg-gray-800 md:dark:bg-gray-900 dark:border-gray-700">
                         <NavBarList
                             href="/"
-                            className="block py-2 px-3 text-white bg-darOliveGreen rounded md:bg-transparent md:text-darkOliveGreen md:p-0 md:dark:text-darkOliveGreen"
+                            className="block py-2 px-3 text-white bg-darOliveGreen rounded md:bg-transparent md:text-darkOliveGreen md:p-0 md:dark:text-darkOliveGreen text-[96%] font-[Arial]"
                             aria-current="page"
                             name="Menu"
                         />
