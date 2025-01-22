@@ -15,46 +15,43 @@
   --color-brightRed: #E21C21;
   --color-emeraldGreen600: #059669;
   --color-emeraldGreen700: #047857;
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
-}
-
-body {
-  color: var(--foreground);
-  background: var(--background);
-  font-family: Arial, Helvetica, sans-serif;
-  height: 100vh;
-  width: 100%;
-  display: flex;
-  flex-direction: column;
+  --color-oliveGreen: #60695D;
+  --color-darkOliveGreen: #404D3C;
 }
 
 @layer components {
   .p-small {
-    padding: 0.2%;
+    @apply p-[0.2%];
   }
 
   .menu-header {
-    font-size: 125%;
-    font-weight: bold;
+      @apply text-[125%] font-bold;
   }
 
   .menu {
-    padding-top: 3%;
-    padding-left: 0.5%;
-    font-weight: lighter;
-    font-size: 87.5%;
-    line-height: 1.7rem;
+      @apply pt-[3%] pl-[0.5%] font-light text-[87.5%] leading-[1.7rem];
   }
 
   .list {
-    padding-top: 14%;
-    padding-left: 28%;
+      @apply pt-[14%] pl-[28%];
+  }
+
+  .navbar-profile-list {
+    @apply  block px-4 py-2 text-sm text-gray-700 hover:hover:text-oliveGreen
+            dark:hover:text-oliveGreen dark:text-gray-200 
+  }
+
+  .navbar-list {
+    @apply block py-2 px-3 text-gray-900 rounded hover:bg-gray-100 
+           md:hover:bg-transparent md:hover:text-oliveGreen md:p-0 
+           dark:text-white md:dark:hover:text-oliveGreen dark:hover:bg-oliveGreen
+           dark:hover:text-white md:dark:hover:bg-transparent dark:border-oliveGreen;
+  } 
+
+  .navbar-user-list {
+    @apply inline-flex items-center p-2 w-10 h-10 justify-center text-sm text-gray-500 rounded-lg md:hidden 
+            hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400
+            dark:hover:bg-gray-700 dark:focus:ring-gray-600;
   }
 
   .label {
@@ -88,5 +85,21 @@ body {
     font-size: 0.75rem;
     border-radius: 0.5rem;
   }
-  
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: #0a0a0a;
+    --foreground: #ededed;
+  }
+}
+
+body {
+  color: var(--foreground);
+  background: var(--background);
+  font-family: Arial, Helvetica, sans-serif;
+  height: 100vh;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
 }

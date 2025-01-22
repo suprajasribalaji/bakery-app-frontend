@@ -18,6 +18,8 @@ export default {
         brightRed: "var(--color-brightRed)",
         emeraldGreen600: "var(--color-emeraldGreen600)",
         emeraldGreen700: "var(--color-emeraldGreen700)",
+        oliveGreen: "var(--color-oliveGreen)",
+        darkOliveGreen: "var(--color-darkOliveGreen)",
       },
       fontFamily: {
         heebo: ['Heebo', 'sans-serif'],
