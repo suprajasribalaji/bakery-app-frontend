@@ -1,3 +1,6 @@
+'use client'
+
+import { useRouter } from "next/navigation";
 import React from "react";
 
 interface NavBarListProps {
@@ -9,10 +12,15 @@ interface NavBarListProps {
 
 const NavBarList: React.FC<NavBarListProps> = (props) => {
     const { href, className, aria_current, name } = props;
+    const router = useRouter();
+
+    const handleNavigation = () => {
+        router.push(href)
+    }
 
     return (
         <li>
-            <a href={href} className={className} aria-current={aria_current}>{name}</a>
+            <button onClick={handleNavigation} className={className} aria-current={aria_current}>{name}</button>
         </li>
     );
 };

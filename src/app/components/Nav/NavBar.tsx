@@ -77,7 +77,7 @@ const NavBar = () => {
                             name="Order"
                         />
                         <NavBarList
-                            href="/"
+                            href="/feedback"
                             className="navbar-list"
                             aria_current={undefined}
                             name="Feedback"
