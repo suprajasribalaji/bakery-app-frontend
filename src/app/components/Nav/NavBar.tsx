@@ -17,10 +17,11 @@ const NavBar = () => {
                 <a href="/" className="flex items-center rtl:space-x-reverse">
                     <img src="/bakery-name.png" className="h-16 w-48 -ml-12" alt="bakery Logo" />
                 </a>
-                <div className="flex items-center md:order-2 space-x-3 md:space-x-0 rtl:space-x-reverse mt-3 relative"> {/* Add relative here */}
+                <div className="flex items-center md:order-2 space-x-3 md:space-x-0 rtl:space-x-reverse mt-3 relative">
                     <button
                         id="dropdownNavbarLink"
                         onClick={toggleDropDown}
+                        onBlur={() => setDropDownOpen(false)}
                         data-dropdown-toggle="dropdownNavbar"
                         className="flex items-center justify-between w-full py-2 px-3 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-oliveGreen md:p-0 md:w-auto dark:text-white md:dark:hover:text-oliveGreen dark:focus:text-white dark:border-gray-700 dark:hover:bg-gray-700 md:dark:hover:bg-transparent"
                     >
