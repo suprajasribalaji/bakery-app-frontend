@@ -1,9 +1,6 @@
-import { TNDistricts } from "@/constants/TNDistricts";
 import FeedbackForm from "../components/Form/FeedbackForm";
 
 const Feedback = () => {
-    const tnDistricts = TNDistricts;
-    
     return (
         <div id="feedback" className="feedback">
             <div className="home-navbar">
