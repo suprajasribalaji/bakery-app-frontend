@@ -8,4 +8,5 @@ export const colors = {
     emeraldGreen700: '#047857',
     oliveGreen: '#60695D',
     darkOliveGreen: '#404D3C',
+    stoneGray100: '#F5F5F4',
 }; 
