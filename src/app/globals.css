@@ -1,5 +1,9 @@
 @import url('https://fonts.googleapis.com/css2?family=Heebo:wght@300&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@400&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Satisfy&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Karla:ital,wght@0,200..800;1,200..800&display=swap');
 
 @tailwind base;
 @tailwind components;
@@ -17,6 +21,7 @@
   --color-emeraldGreen700: #047857;
   --color-oliveGreen: #60695D;
   --color-darkOliveGreen: #404D3C;
+  --color-stoneGray100: #F5F5F4;
 }
 
 @layer components {
@@ -84,6 +89,18 @@
   .message-and-button {
     font-size: 0.75rem;
     border-radius: 0.5rem;
+  }
+
+  .single-grid {
+    @apply w-[60%] text-justify rounded-lg ;
+  }
+
+  .about-us-header {
+    @apply font-satisfy tracking-[0.2em] text-[120%] font-bold;
+  }
+
+  .about-us-content {
+    @apply font-karla pt-3 w-5/6;
   }
 }
 

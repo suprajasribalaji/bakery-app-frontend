@@ -15,7 +15,7 @@ const NavBar = () => {
         <nav className="w-full h-[14%] bg-white border-gray-200 dark:bg-gray-900">
             <div className="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-3">
                 <a href="/" className="flex items-center rtl:space-x-reverse">
-                    <img src="/bakery-name.png" className="h-16 w-56 -ml-10 pt-2" alt="bakery Logo" />
+                    <img src="/navBar/bakery-name.png" className="h-16 w-56 -ml-10 pt-2" alt="bakery Logo" />
                 </a>
                 <div className="flex items-center md:order-2 space-x-3 md:space-x-0 rtl:space-x-reverse mt-3 relative">
                     <button
@@ -26,7 +26,7 @@ const NavBar = () => {
                         className="flex items-center justify-between w-full py-2 px-3 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-oliveGreen md:p-0 md:w-auto dark:text-white md:dark:hover:text-oliveGreen dark:focus:text-white dark:border-gray-700 dark:hover:bg-gray-700 md:dark:hover:bg-transparent"
                     >
                         <img
-                            src="/avatar.png"
+                            src="/navBar/avatar.png"
                             alt="Profile"
                             className="h-6 w-6 rounded-full"
                         />
@@ -79,7 +79,7 @@ const NavBar = () => {
                             name="Feedback"
                         />
                         <a href="/" className="flex items-center rtl:space-x-reverse gap-2">
-                            <img src="/shopping-cart.png" className="h-8 -mt-2" alt="bakery Logo" />
+                            <img src="/navBar/shopping-cart.png" className="h-8 -mt-2" alt="bakery Logo" />
                             <span>{countOfCartItems}</span>
                         </a>
                     </ul>
