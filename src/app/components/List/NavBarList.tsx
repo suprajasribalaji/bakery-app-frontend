@@ -1,11 +1,5 @@
 import React from "react";
-
-interface NavBarListProps {
-    href: string;
-    className: string;
-    aria_current?: boolean | "false" | "true" | "page" | "step" | "location" | "date" | "time" | undefined;
-    name: string;
-}
+import { NavBarListProps } from "@/utils/types";
 
 const NavBarList: React.FC<NavBarListProps> = (props) => {
     const { href, className, aria_current, name } = props;

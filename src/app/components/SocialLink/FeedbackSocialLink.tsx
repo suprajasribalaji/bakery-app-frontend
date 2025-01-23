@@ -1,11 +1,7 @@
-'use client'
-
-import { useRouter } from "next/navigation";
 import Button from "../Button/Button";
 import SocialLinkButtons from "../Button/SocialLinkButtons";
 
 const FeedbackSocialLink = () => {
-    const router = useRouter();
     return (
         <div id="feedback-social-links" className="grid grid-cols-2 bg-black text-white p-[2%] justify-items-center items-center pl-32 pr-[4.6rem]">
             <div id="feedback" className="grid grid-cols-2 gap-[0.5rem]">

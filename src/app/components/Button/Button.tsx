@@ -1,11 +1,5 @@
 import React from "react";
-
-interface ButtonProps {
-    iconUrl: string
-    altText: string
-    className: string
-    style?: React.CSSProperties;
-};
+import { ButtonProps } from "@/utils/types";
 
 const Button: React.FC<ButtonProps> = (props) => {
     const {iconUrl, altText, className, style} = props;
