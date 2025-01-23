@@ -5,7 +5,7 @@ import { NavBarListProps } from "@/utils/types";
 import { useRouter } from "next/navigation";
 
 const NavBarList: React.FC<NavBarListProps> = (props) => {
-    const { href, className, aria_current, name } = props;
+    const { href, className,  name } = props;
     const router = useRouter();
 
     const handleNavigation = () => {
@@ -14,7 +14,7 @@ const NavBarList: React.FC<NavBarListProps> = (props) => {
 
     return (
         <li>
-            <button onClick={handleNavigation} className={className} aria-current={aria_current}>{name}</button>
+            <button onClick={handleNavigation} className={className}>{name}</button>
         </li>
     );
 };
