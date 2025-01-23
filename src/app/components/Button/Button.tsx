@@ -1,7 +1,7 @@
 'use client'
 
 import { ButtonProps } from "@/utils/types";
-import { redirect, useRouter } from "next/navigation";
+import { useRouter } from "next/navigation";
 import React from "react";
 
 const Button: React.FC<ButtonProps> = (props) => {
