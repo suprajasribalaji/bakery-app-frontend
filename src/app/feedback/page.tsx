@@ -1,6 +1,6 @@
 import FeedbackForm from "../components/Form/FeedbackForm";
 
-const Feedback = () => {    
+const Feedback = () => {
     return (
         <div id="feedback" className="feedback">
             <div className="home-navbar">

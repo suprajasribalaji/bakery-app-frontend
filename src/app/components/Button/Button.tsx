@@ -4,7 +4,6 @@ import React from "react";
 import { ButtonProps } from "@/utils/types";
 import { useRouter } from "next/navigation";
 
-
 const Button: React.FC<ButtonProps> = (props) => {
     const {path, iconUrl, altText, className, style} = props;
     const router = useRouter();

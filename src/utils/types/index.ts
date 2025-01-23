@@ -26,5 +26,6 @@ export interface InputFieldProps {
 export interface NavBarListProps {
     href: string;
     className: string;
+    aria_current?: boolean | "false" | "true" | "page" | "step" | "location" | "date" | "time" | undefined;
     name: string;
 };
