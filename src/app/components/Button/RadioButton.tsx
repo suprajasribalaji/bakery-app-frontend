@@ -1,11 +1,5 @@
 import React from "react";
-
-interface RadioButtonProps {
-    label: string;
-    name: string;
-    value: string;
-    id: string;
-};
+import { RadioButtonProps } from "@/utils/types";
 
 const RadioButton: React.FC<RadioButtonProps> = (props) => {
     const { label, name, value, id } = props;

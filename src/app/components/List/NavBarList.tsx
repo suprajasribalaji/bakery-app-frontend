@@ -1,13 +1,8 @@
 'use client'
 
-import { useRouter } from "next/navigation";
 import React from "react";
-
-interface NavBarListProps {
-    href: string;
-    className: string;
-    name: string;
-}
+import { NavBarListProps } from "@/utils/types";
+import { useRouter } from "next/navigation";
 
 const NavBarList: React.FC<NavBarListProps> = (props) => {
     const { href, className,  name } = props;

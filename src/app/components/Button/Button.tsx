@@ -1,14 +1,9 @@
 'use client'
-import { redirect, useRouter } from "next/navigation";
-import React from "react";
 
-interface ButtonProps {
-    path: string;
-    iconUrl: string;
-    altText: string;
-    className: string;
-    style?: React.CSSProperties;
-};
+import React from "react";
+import { ButtonProps } from "@/utils/types";
+import { useRouter } from "next/navigation";
+
 
 const Button: React.FC<ButtonProps> = (props) => {
     const {path, iconUrl, altText, className, style} = props;
