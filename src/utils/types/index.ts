@@ -29,3 +29,11 @@ export interface NavBarListProps {
     aria_current?: boolean | "false" | "true" | "page" | "step" | "location" | "date" | "time" | undefined;
     name: string;
 };
+
+export interface RegisterProps {
+    pageName: string;
+    subHeading: string;
+    redirectTo: string;
+    routeTo: string;
+    registerOption: string;
+};
