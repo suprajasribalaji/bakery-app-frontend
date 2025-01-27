@@ -32,8 +32,7 @@ const ForgotPasswordModal: React.FC<ForgotPasswordModalProps> = (props) => {
           </div>
           <div className="text-center mb-12">
             <span className="text-sm block mx-auto w-[64%] font-heebo">
-              Enter your login email and we'll send you a link to reset your
-              password.
+              Enter your login email and we'll send you a link to reset your password.
             </span>
           </div>
           <div className="w-full flex justify-center">

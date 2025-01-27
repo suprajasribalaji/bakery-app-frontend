@@ -68,6 +68,10 @@ const RegisterWithEmailAndPassword: React.FC<RegisterWithEmailAndPasswordProps> 
                     </button>
                 </div>
 
+                <div className="mb-6">
+                    <span className="text-center text-gray-500">or</span>
+                </div>
+
                 <div className="flex justify-center gap-8">
                     <Button
                         path="/"
