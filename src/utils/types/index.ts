@@ -37,3 +37,8 @@ export interface RegisterProps {
     routeTo: string;
     registerOption: string;
 };
+
+export interface RegisterWithEmailAndPasswordProps {
+    type: string;
+    pageName: string;
+};
