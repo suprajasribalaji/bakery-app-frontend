@@ -1,4 +1,4 @@
-import { emailRegex, passwordRegex } from "@/utils/regex";
+import { emailRegex, passwordRegex } from "@/app/utils/regex";
 
 export const validateEmail = (email: string) => {
     if (!emailRegex.test(email)) {

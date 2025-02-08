@@ -1,7 +1,7 @@
 'use client'
 
 import React, { useState } from "react";
-import { RegisterProps } from "@/utils/types";
+import { RegisterProps } from "@/app/utils/types";
 import { useRouter } from "next/navigation";
 import RegisterWithEmailAndPassword from "./RegisterWithEmailAndPassword";
 

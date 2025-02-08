@@ -1,5 +1,5 @@
 import React from "react";
-import { InputFieldProps } from "@/utils/types";
+import { InputFieldProps } from "@/app/utils/types";
 
 const InputField: React.FC<InputFieldProps> = (props) => {
     const { label, type, id, name, placeholder, required, options } = props;

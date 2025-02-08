@@ -2,9 +2,9 @@
 
 import React, { useState } from "react";
 import Button from "../Button/Button";
-import { RegisterWithEmailAndPasswordProps } from "@/utils/types";
+import { RegisterWithEmailAndPasswordProps } from "@/app/utils/types";
 import ForgotPasswordModal from "../Modal/ForgotPasswordModal";
-import { validateEmail, validatePassword } from "@/helpers/validators";
+import { validateEmail, validatePassword } from "@/app/helpers/validators";
 import axios from "axios";
 import { message } from "antd";
 import { useRouter } from "next/navigation";
