@@ -39,7 +39,7 @@
   }
 
   .list {
-      @apply pt-[4%] pl-[28%];
+      @apply pt-[14%] pl-[28%];
   }
 
   .navbar-profile-list {
