@@ -10,14 +10,14 @@ const Footer = () => {
 
     return (
         <>
-            <div id="page-bottom" className="grid grid-cols-4 text-left bg-black text-white">
+            <div id="page-bottom" className="grid grid-cols-4 text-left bg-black text-white font-sans">
                 <GrabDealsList />
                 <AboutUsList />
                 <AssuranceList />
                 <FranciseList />
             </div>
             <FeedbackSocialLink />
-            <footer className="text-center text-xs font-light bg-black text-[--color-chineseSilver] font-heebo p-[1%]">
+            <footer className="text-center text-xs font-light bg-black text-[--color-chineseSilver] font-heebo pb-4">
                 <p className="p-small">Get yours now before it's gone</p>
                 <p className="p-small">Supraja Sri @ {year} by S's Patisserie. All rights reserved</p>
             </footer>

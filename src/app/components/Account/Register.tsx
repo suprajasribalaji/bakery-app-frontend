@@ -21,12 +21,12 @@ const Register: React.FC<RegisterProps> = (props) => {
 
     return (
         <div className="min-h-screen flex items-center justify-center -mt-12 bg-white">
-            <div className="p-6 w-96">
+            <div className="p-6 w-96 text-black">
                 <div className="text-center mb-6">
                     <span className="text-[280%] font-bold font-playfairDisplay">{pageName}</span>
                 </div>
-                <div className="flex justify-center items-center mb-6 font-heebo text-[102%] -mt-2">
-                    <p className="mr-2">{subHeading}?</p>
+                <div className="flex justify-center items-center mb-6 font-heebo text-[102%] -mt-3">
+                    <p className="mr-1">{subHeading}?</p>
                     <button
                         onClick={handleRouter}
                         className="text-oliveGreen hover:text-darkOliveGreen"

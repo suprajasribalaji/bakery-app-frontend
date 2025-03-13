@@ -19,7 +19,7 @@ const NavBar = () => {
     };
 
     return (
-        <nav className="w-full h-[14%] bg-white border-gray-200 dark:bg-gray-900">
+        <nav className="w-full h-[14%] bg-white border-gray-200">
             <div className="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-3">
                 <a href="/" className="flex items-center rtl:space-x-reverse">
                     <img src="/navBar/bakery-name.png" className="h-16 w-56 -ml-10 pt-2" alt="bakery Logo" />
@@ -33,7 +33,7 @@ const NavBar = () => {
                                     onClick={toggleDropDown}
                                     onBlur={() => setDropDownOpen(false)}
                                     data-dropdown-toggle="dropdownNavbar"
-                                    className="flex items-center justify-between w-full py-2 px-3 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-oliveGreen md:p-0 md:w-auto dark:text-white md:dark:hover:text-oliveGreen dark:focus:text-white dark:border-gray-700 dark:hover:bg-gray-700 md:dark:hover:bg-transparent"
+                                    className="flex items-center justify-between w-full py-2 px-3 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-oliveGreen md:p-0 md:w-auto"
                                 >
                                     <img
                                         src="/navBar/avatar.png"
@@ -60,14 +60,14 @@ const NavBar = () => {
                                     dropdownOpen && (
                                         <div
                                             id="dropdownNavbar"
-                                            className="absolute top-full -left-32 mt-3 z-10 font-normal bg-white divide-y divide-gray-100 rounded-lg shadow w-44 dark:bg-gray-700 dark:divide-gray-600"
+                                            className="absolute top-full -left-32 mt-3 z-10 font-normal bg-white divide-y divide-gray-100 rounded-lg shadow w-44"
                                         >
-                                            <ul className="text-sm text-gray-700 dark:text-gray-400" aria-labelledby="dropdownLargeButton">
+                                            <ul className="text-sm text-gray-700" aria-labelledby="dropdownLargeButton">
                                                 <NavBarList href="/" className="navbar-profile-list" name="Account Settings" />
                                                 <NavBarList href="/" className="navbar-profile-list" name="My Orders" />
                                             </ul>
                                             <div>
-                                                <a href="/" className="block px-4 py-2 text-sm text-gray-700 hover:text-oliveGreen dark:text-gray-200 dark:hover:text-white">Log out</a>
+                                                <a href="/" className="block px-4 py-2 text-sm text-gray-700 hover:text-oliveGreen">Log out</a>
                                             </div>
                                         </div>
                                     )
@@ -78,7 +78,7 @@ const NavBar = () => {
                                 <button
                                     id="login"
                                     onClick={handleLogin}
-                                    className="flex items-center justify-between w-full py-2 px-3 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-oliveGreen md:p-0 md:w-auto dark:text-white md:dark:hover:text-oliveGreen dark:focus:text-white dark:border-gray-700 dark:hover:bg-gray-700 md:dark:hover:bg-transparent"
+                                    className="flex items-center justify-between w-full py-2 px-3 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-oliveGreen md:p-0 md:w-auto"
                                 >
                                     <img
                                         src="/navBar/avatar.png"
@@ -92,10 +92,10 @@ const NavBar = () => {
                     }
                 </div>
                 <div className="items-center pl-[50%] pt-4 hidden w-full md:flex md:w-auto md:order-1" id="navbar-user">
-                    <ul className="flex flex-col font-medium p-4 md:p-0 mt-4 border border-gray-100 rounded-lg bg-gray-50 md:space-x-8 rtl:space-x-reverse md:flex-row md:mt-0 md:border-0 md:bg-white dark:bg-gray-800 md:dark:bg-gray-900 dark:border-gray-700">
+                    <ul className="flex flex-col font-medium p-4 md:p-0 mt-4 border border-gray-100 rounded-lg bg-gray-50 md:space-x-8 rtl:space-x-reverse md:flex-row md:mt-0 md:border-0 md:bg-white">
                         <NavBarList
                             href="/"
-                            className="block py-2 px-3 rounded md:bg-transparent md:hover:text-oliveGreen md:text-black md:p-0 md:dark:text-darkOliveGreen text-[96%] font-[Arial]"
+                            className="block py-2 px-3 rounded md:bg-transparent md:hover:text-oliveGreen md:text-black md:p-0 text-[96%] font-[Arial]"
                             name="Menu"
                         />
                         <NavBarList
@@ -110,7 +110,7 @@ const NavBar = () => {
                         />
                         <a href="/" className="flex items-center rtl:space-x-reverse gap-2">
                             <img src="/navBar/shopping-cart.png" className="h-8 -mt-2" alt="bakery Logo" />
-                            <span>{countOfCartItems}</span>
+                            <span className="text-black">{countOfCartItems}</span>
                         </a>
                     </ul>
                 </div>

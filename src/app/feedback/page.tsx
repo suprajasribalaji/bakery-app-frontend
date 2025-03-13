@@ -1,15 +1,18 @@
+import Footer from "../components/Footer/Footer";
 import FeedbackForm from "../components/Form/FeedbackForm";
+import NavBar from "../components/Nav/NavBar";
 
 const Feedback = () => {
     return (
         <div id="feedback" className="feedback">
             <div className="home-navbar">
+                <NavBar />
             </div>
-              <div className="bg-[--color-cloudGray] h-[130vh] w-full font-openSans">
+            <div className="bg-[--color-cloudGray] h-[130vh] w-full font-openSans">
                 <div className="text-center pt-[3%]">
                     <h1 className="text-[170%] font-extrabold tracking-wide text-[--color-brightRed]">FEEDBACK</h1>
                 </div>
-                <div className="p-[5%] px-[18%]">
+                <div className="p-[5%] px-[18%] text-black">
                     <div className="font-extrabold text-[116%] tracking-[0.03em]">
                         <h1 className="sub-header">SUGGESTIONS</h1>
                     </div>
@@ -19,6 +22,9 @@ const Feedback = () => {
                         </p>
                     </div>
                     <FeedbackForm />
+                </div>
+                <div className="footer">
+                    <Footer />
                 </div>
             </div>
         </div>

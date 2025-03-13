@@ -31,33 +31,30 @@
   }
 
   .menu-header {
-      @apply text-[125%] font-bold;
+      @apply text-[112%] font-bold;
   }
 
   .menu {
-      @apply pt-[3%] pl-[0.5%] font-light text-[87.5%] leading-[1.7rem];
+      @apply pt-[3%] pl-[0.5%] font-light text-[84%] leading-[1.7rem];
   }
 
   .list {
-      @apply pt-[14%] pl-[28%];
+      @apply pt-[4%] pl-[28%];
   }
 
   .navbar-profile-list {
-    @apply  block px-4 py-2 text-sm text-gray-700 hover:hover:text-oliveGreen
-            dark:hover:text-oliveGreen dark:text-gray-200 
+    @apply  block px-4 py-2 text-sm text-gray-700 hover:hover:text-oliveGreen; 
   }
 
   .navbar-list {
     @apply block py-2 px-3 text-black rounded hover:bg-gray-100 
            md:hover:bg-transparent md:hover:text-oliveGreen md:p-0 
-           dark:text-white md:dark:hover:text-oliveGreen dark:hover:bg-oliveGreen
-           dark:hover:text-white md:dark:hover:bg-transparent dark:border-oliveGreen text-[96%] font-[Arial];
+           text-[96%] font-[Arial];
   } 
 
   .navbar-user-list {
     @apply inline-flex items-center p-2 w-10 h-10 justify-center text-sm text-gray-500 rounded-lg md:hidden 
-            hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400
-            dark:hover:bg-gray-700 dark:focus:ring-gray-600;
+            hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200;
   }
 
   .label {
