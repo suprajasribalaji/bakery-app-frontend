@@ -5,96 +5,78 @@ import Button from "../Button/Button";
 import { RegisterWithEmailAndPasswordProps } from "@/app/utils/types";
 import ForgotPasswordModal from "../Modal/ForgotPasswordModal";
 import { validateEmail, validatePassword } from "@/app/helpers/validators";
-import axios from "axios";
 import { message } from "antd";
 import { useRouter } from "next/navigation";
+import { requestUserSignupByEmail } from "@/app/redux/slices/user/signup";
+import { requestUserLoginByEmail } from "@/app/redux/slices/user/login";
+import { useAppDispatch } from "@/app/hooks/useAppDispatch";
 
-const RegisterWithEmailAndPassword: React.FC<RegisterWithEmailAndPasswordProps> = (props) => {
-    const { pageName } = props;
+const RegisterWithEmailAndPassword: React.FC<RegisterWithEmailAndPasswordProps> = ({ pageName }) => {
     const router = useRouter();
-    const [isForgotPasswordModalOpened, setIsForgotPasswordModalOpened] = useState<boolean>(false);
-    const [username, setUsername] = useState<string>("");
-    const [email, setEmail] = useState<string>("");
-    const [password, setPassword] = useState<string>("");
+    const dispatch = useAppDispatch();
+
+    const [isForgotPasswordModalOpened, setIsForgotPasswordModalOpened] = useState(false);
+    const [username, setUsername] = useState("");
+    const [email, setEmail] = useState("");
+    const [password, setPassword] = useState("");
     const [emailError, setEmailError] = useState<string | null>(null);
-    const [passwordError, setPasswordError] = useState<string | null>(null);   
+    const [passwordError, setPasswordError] = useState<string | null>(null);
+    const [loading, setLoading] = useState(false); // 🔹 Loading state
 
-    const [messageApi, contextHolder] = message.useMessage();
-
-    const success = (message: string) => {
-      messageApi.open({
-        type: 'success',
-        content: message,
-      });
-    };
-  
-    const handleForgotPasswordModal = () => {
-        setIsForgotPasswordModalOpened(true);
+    // Handle email change with validation
+    const handleEmailChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+        const value = e.target.value;
+        setEmail(value);
+        setEmailError(validateEmail(value) ? null : "Invalid email format");
     };
 
+    // Handle password change with validation
+    const handlePasswordChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+        const value = e.target.value;
+        setPassword(value);
+        setPasswordError(validatePassword(value) ? null : "Password must be at least 6 characters");
+    };
+
+    // Handle form submission
     const handleLoginOrSignup = async (e: React.FormEvent) => {
         e.preventDefault();
-        setEmailError(validateEmail(email));
-        setPasswordError(validatePassword(password));
+        
+        // Revalidate before proceeding
+        if (!validateEmail(email)) {
+            setEmailError("Invalid email format");
+            return;
+        }
 
-        if (!emailError && !passwordError) {
-            if (pageName === "Sign Up") {
-                try {
-                    const response = await axios.post('http://127.0.0.1:8000/api/accounts/signup/', {
-                        username: username,
-                        email: email,
-                        password: password,
-                    });
-                    if(response.status===201){
-                        setUsername('');
-                        setEmail('');
-                        setPassword('');
-                        setEmailError('');
-                        setPasswordError('');
-                        router.push('/');
-                        console.log('User created successfully');
-                        success('User Created Successfully');
-                    }
-                } catch (error: any) {
-                    console.log(error, ' ---____---');
-                    message.error('Something went wrong. Please try again later');
-                }
-            }
+        if (!validatePassword(password)) {
+            setPasswordError("Password must be at least 6 characters");
+            return;
+        }
 
-            if (pageName === "Log In") {
-                try {
-                    const response = await axios.post('http://127.0.0.1:8000/api/accounts/login/', {
-                        email: email,
-                        password: password,
-                    });
-                    if(response.status===200){
-                        setEmail('');
-                        setPassword('');
-                        setEmailError('');
-                        setPasswordError('');
-                        router.push('/');
-                        console.log('User Logged in successfully');
-                        success('User Logged in successfully');
-                    }
-                } catch (error: any) {
-                    console.log(error, ' ---____---');
-                    message.error('Something went wrong. Please try again later');
-                }
+        try {
+            setLoading(true); // 🔹 Show loader
+            let userCredential;
+            if (pageName === 'Sign Up') {
+                userCredential = await dispatch(requestUserSignupByEmail({ email, password }));
+            } else {
+                userCredential = await dispatch(requestUserLoginByEmail({ email, password }));
             }
+            router.push('/');
+        } catch (error: any) {
+            message.error("Something went wrong. Please try again later");
+        } finally {
+            setLoading(false); // 🔹 Hide loader after request completes
         }
     };
 
     return (
         <div>
-            {contextHolder}
-            <form className="w-[90%] max-w-md mx-auto flex flex-col items-center" onSubmit={handleLoginOrSignup}>
-                {
-                    pageName==="Sign Up" && 
+            <form onSubmit={handleLoginOrSignup} className="w-[90%] max-w-md mx-auto flex flex-col items-center">
+                {pageName === "Sign Up" && (
                     <div className="relative z-0 w-[85%] mb-7 group">
                         <input
-                            type="username"
-                            name="floating_username"
-                            id="floating_username"
+                            type="text"
+                            name="username"
+                            id="username"
                             className="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none focus:outline-none peer"
                             placeholder=" "
                             value={username}
@@ -102,65 +84,63 @@ const RegisterWithEmailAndPassword: React.FC<RegisterWithEmailAndPasswordProps> 
                             required
                         />
                         <label
-                            htmlFor="floating_username"
+                            htmlFor="username"
                             className="peer-focus:font-medium absolute text-sm text-gray-500 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6"
                         >
                             Username
                         </label>
                     </div>
-                }
+                )}
+
+                {/* Email Input Field */}
                 <div className="relative z-0 w-[85%] mb-7 group">
                     <input
                         type="email"
-                        name="floating_email"
-                        id="floating_email"
-                        className={`block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 ${
-                            emailError ? "border-red-500" : "border-gray-300"
-                        } appearance-none focus:outline-none peer`}
+                        name="email"
+                        id="email"
+                        className="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none focus:outline-none peer"
                         placeholder=" "
                         value={email}
-                        onChange={(e) => setEmail(e.target.value)}
-                        onBlur={() => validateEmail(email)}
+                        onChange={handleEmailChange}
                         required
                     />
                     <label
-                        htmlFor="floating_email"
+                        htmlFor="email"
                         className="peer-focus:font-medium absolute text-sm text-gray-500 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6"
                     >
                         Email
                     </label>
-                    {emailError && <span className="text-red-500 text-xs mt-1">{emailError}</span>}
+                    {emailError && <p className="text-red-500 text-xs mt-1">{emailError}</p>}
                 </div>
 
+                {/* Password Input Field */}
                 <div className="relative z-0 w-[85%] mb-6 group">
                     <input
                         type="password"
-                        name="floating_password"
-                        id="floating_password"
-                        className={`block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 ${
-                            passwordError ? "border-red-500" : "border-gray-300"
-                        } appearance-none focus:outline-none peer`}
+                        name="password"
+                        id="password"
+                        className="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none focus:outline-none peer"
                         placeholder=" "
                         value={password}
-                        onChange={(e) => setPassword(e.target.value)}
-                        onBlur={() => validatePassword(password)}
+                        onChange={handlePasswordChange}
                         required
                     />
                     <label
-                        htmlFor="floating_password"
+                        htmlFor="password"
                         className="peer-focus:font-medium absolute text-sm text-gray-500 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6"
                     >
                         Password
                     </label>
-                    {passwordError && <span className="text-red-500 text-xs mt-1">{passwordError}</span>}
+                    {passwordError && <p className="text-red-500 text-xs mt-1">{passwordError}</p>}
                 </div>
 
+                {/* Forgot Password / Recaptcha */}
                 {pageName === "Sign Up" ? (
                     <div className="mb-6 w-[85%] text-center">recaptcha</div>
                 ) : (
                     <div className="mb-6 w-[85%] text-right">
                         <button
-                            onClick={handleForgotPasswordModal}
+                            onClick={() => setIsForgotPasswordModalOpened(true)}
                             className="text-darkOliveGreen hover:text-oliveGreen hover:underline"
                             type="button"
                         >
@@ -169,13 +149,28 @@ const RegisterWithEmailAndPassword: React.FC<RegisterWithEmailAndPasswordProps> 
                     </div>
                 )}
 
+                {/* Submit Button with Loader */}
                 <div className="mb-6 w-[85%]">
-                    <button className="flex items-center justify-center w-full border bg-oliveGreen text-white py-2 rounded hover:bg-white hover:text-oliveGreen px-4">
-                        <span className="text-center">{pageName}</span>
+                    <button
+                        type="submit"
+                        className={`flex items-center justify-center w-full border bg-oliveGreen text-white py-2 rounded ${
+                            loading ? "opacity-70 cursor-not-allowed" : "hover:bg-white hover:text-oliveGreen"
+                        } px-4`}
+                        disabled={loading}
+                    >
+                        {loading ? (
+                            <>
+                                <svg className="animate-spin h-5 w-5 mr-3 border-t-2 border-white rounded-full" viewBox="0 0 24 24"></svg>
+                                Processing...
+                            </>
+                        ) : (
+                            <span className="text-center">{pageName}</span>
+                        )}
                     </button>
                 </div>
             </form>
 
+            {/* Forgot Password Modal */}
             {isForgotPasswordModalOpened && (
                 <ForgotPasswordModal
                     isModalOpen={isForgotPasswordModalOpened}

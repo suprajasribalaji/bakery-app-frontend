@@ -4,11 +4,15 @@ import React, { useState } from "react";
 import { RegisterProps } from "@/app/utils/types";
 import { useRouter } from "next/navigation";
 import RegisterWithEmailAndPassword from "./RegisterWithEmailAndPassword";
+import { useAppDispatch } from "@/app/hooks/useAppDispatch";
+import { requestUserLoginByFacebook, requestUserLoginByGoogle } from "@/app/redux/slices/user/login";
 
 const Register: React.FC<RegisterProps> = (props) => {
     const { pageName, subHeading, redirectTo, routeTo, registerOption } = props;
     const router = useRouter();
+    const dispatch = useAppDispatch();
     const [isLoginWithEmailOpened, setIsLoginWithEmailOpened ] = useState<boolean>(false);
+    const [isLoading, setIsLoading] = useState<boolean>(false);
 
     const handleRouter = () => {
         const route = '/account/' + routeTo;
@@ -17,6 +21,27 @@ const Register: React.FC<RegisterProps> = (props) => {
 
     const handleEmailOption = () => {
         setIsLoginWithEmailOpened(true);
+    };
+
+    const handleLoginbyProvider = async (provider: string) => {
+        setIsLoading(true);
+        try {
+            if(provider === 'google') {
+                const login = await dispatch(requestUserLoginByGoogle()).unwrap();
+                console.log('login', login);
+            }
+            if(provider === 'facebook') {
+                const login = await dispatch(requestUserLoginByFacebook()).unwrap();
+                console.log('login', login);
+            }
+            router.push('/');
+            setIsLoading(false);
+
+        } catch (error) {
+            console.log('login error: ', error);   
+        } finally {
+            setIsLoading(false);
+        }        
     };
 
     return (
@@ -38,7 +63,11 @@ const Register: React.FC<RegisterProps> = (props) => {
                     isLoginWithEmailOpened ? <RegisterWithEmailAndPassword type={registerOption} pageName={pageName} /> : 
                     (
                         <div className="grid gap-4 mt-10">
-                            <button className="flex items-center border text-black py-2 rounded hover:bg-gray-100 px-4 ml-4 mr-4">
+                            <button
+                                disabled={isLoading}
+                                onClick={() => handleLoginbyProvider('google')}
+                                className="flex items-center border text-black py-2 rounded hover:bg-gray-100 px-4 ml-4 mr-4"
+                            >
                                 <img
                                     src="/socialLink/google.png"
                                     alt="Google Icon"
@@ -46,7 +75,11 @@ const Register: React.FC<RegisterProps> = (props) => {
                                 />
                                 <span className="flex-1 text-center">{registerOption} with Google</span>
                             </button>
-                            <button className="flex items-center border bg-blue-900 text-white py-2 rounded hover:bg-blue-700 px-4 ml-4 mr-4">
+                            <button
+                                disabled = {isLoading} 
+                                onClick={() => handleLoginbyProvider('facebook')}
+                                className="flex items-center border bg-blue-900 text-white py-2 rounded hover:bg-blue-700 px-4 ml-4 mr-4"
+                            >
                                 <img
                                     src="/socialLink/blue-facebook.png"
                                     alt="Facebook Icon"

@@ -2,16 +2,16 @@ import { emailRegex, passwordRegex } from "@/app/utils/regex";
 
 export const validateEmail = (email: string) => {
     if (!emailRegex.test(email)) {
-        return "Invalid email format";
+        return false;
     } else {
-        return null;
+        return true;
     }
 };
 
 export const validatePassword = (password: string) => {
     if (!passwordRegex.test(password)) {
-        return "Password must contain at least 8 characters, 1 uppercase, 1 number, and 1 lowercase.";
+        return false;
     } else {
-        return null;
+        return true;
     }
 };
