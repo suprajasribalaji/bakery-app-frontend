@@ -10,7 +10,7 @@ const Policy = () => {
                     <div className="text-center">
                         <p className="tracking-[0.05em] text-[240%] text-brightRed font-satisfy font-bold">Privacy Policy</p>
                     </div>
-                    <div className="mt-4 bg-white text-justify mt-12">
+                    <div className="mt-4 bg-white text-justify">
                         <p className="text-center pt-6 text-sm"><i>Last updated: March 17, 2025</i></p>
                         <div className="pl-24 pr-24 pb-24 mt-12 text-sm">
                         <div>
@@ -100,7 +100,7 @@ const Policy = () => {
                             </p>
                             <p className="mt-2">
                                 <strong>S's Patisserie</strong><br />
-                                Madurai<br />
+                                Madurai, Tamil Nadu, India<br />
                                 suprajasri.balaji@gmail.com<br />
                             </p>
                         </div>
