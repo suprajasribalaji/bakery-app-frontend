@@ -7,7 +7,7 @@ const AssuranceList = () => {
             <div className="menu">
                 <ul className="menu-list">
                     <li className="menu-item"><a href="/policy">Privacy Policy</a></li>
-                    <li className="menu-item"><a href="/">Terms & Conditions</a></li>
+                    <li className="menu-item"><a href="/terms-and-conditions">Terms & Conditions</a></li>
                     <li className="menu-item"><a href="/">FAQs & Help</a></li>
                 </ul>
             </div>

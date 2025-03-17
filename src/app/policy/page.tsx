@@ -100,7 +100,7 @@ const Policy = () => {
                             </p>
                             <p className="mt-2">
                                 <strong>S's Patisserie</strong><br />
-                                Madurai<br />
+                                Madurai, Tamil Nadu, India<br />
                                 suprajasri.balaji@gmail.com<br />
                             </p>
                         </div>
