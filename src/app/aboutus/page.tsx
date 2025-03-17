@@ -57,7 +57,7 @@ const AboutUs = () => {
     return (
         <div>
             <NavBar />
-            <div className="w-full bg-stoneGray100 -mt-72 pb-12">
+            <div className="w-full bg-stoneGray100 text-black -mt-72 pb-12 pt-8">
                 <div className="flex justify-center font-bold font-satisfy tracking-[0.03em] text-[320%] p-8">
                     <p>Our Journey</p>
                 </div>
