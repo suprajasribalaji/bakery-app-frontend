@@ -29,6 +29,7 @@ export default {
         montserrat: ['Montserrat', 'san-serif'],
         roboto: ['Roboto', 'san-serif'],
         karla: ['Karla', 'san-serif'],
+        playfairDisplay: ['Playfair Display', 'san-serif'],
       },
     },
   },

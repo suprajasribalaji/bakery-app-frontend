@@ -1,7 +1,7 @@
 'use client'
 
 import React from "react";
-import { NavBarListProps } from "@/utils/types";
+import { NavBarListProps } from "@/app/utils/types";
 import { useRouter } from "next/navigation";
 
 const NavBarList: React.FC<NavBarListProps> = (props) => {

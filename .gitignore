@@ -24,6 +24,9 @@
 .DS_Store
 *.pem
 
+# firebase credentials
+**/firebase.config.ts
+
 # debug
 npm-debug.log*
 yarn-debug.log*
