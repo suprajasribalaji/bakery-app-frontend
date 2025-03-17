@@ -10,7 +10,7 @@ const TermsAndConditions = () => {
                     <div className="text-center">
                         <p className="tracking-[0.05em] text-[240%] text-brightRed font-satisfy font-bold">Terms and Conditions</p>
                     </div>
-                    <div className="mt-12 bg-white text-justify">
+                    <div className="mt-4 bg-white text-justify">
                         <p className="text-center pt-6 text-sm"><i>Last updated: March 17, 2025</i></p>
                         <div className="pl-24 pr-24 pb-24 mt-12 text-sm">
                             <div>
