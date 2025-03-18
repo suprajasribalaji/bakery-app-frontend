@@ -6,7 +6,7 @@ const AboutUsList = () => {
             </div>
             <div className="menu">
                 <ul className="menu-list">
-                    <li className="menu-item"><a href="/aboutus">About us</a></li>
+                    <li className="menu-item"><a href="/about-us">About us</a></li>
                     <li className="menu-item"><a href="/">Idea to Plate</a></li>
                 </ul>
             </div>
