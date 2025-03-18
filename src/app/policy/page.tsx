@@ -5,7 +5,7 @@ const Policy = () => {
     return (
         <div>
             <NavBar />
-            <div className="bg-stoneGray100 flex justify-center py-10 -mt-48">
+            <div className="bg-[--color-cloudGray] flex justify-center py-10 -mt-48">
                 <div className="max-w-5xl p-6 rounded-lg mt-2">
                     <div className="text-center">
                         <p className="tracking-[0.05em] text-[240%] text-brightRed font-satisfy font-bold">Privacy Policy</p>
@@ -76,7 +76,7 @@ const Policy = () => {
                                 <li>Opt-out of marketing communications.</li>
                                 <li>Restrict or object to certain data processing activities.</li>
                             </ul>
-                            <p className="mt-2">To exercise your rights, please contact us at <strong>[Insert Contact Email]</strong>.</p>
+                            <p className="mt-2">To exercise your rights, please contact us at <i>suprajasri.balaji@gmail.com</i>.</p>
                         </div>
                         
                         <div>
