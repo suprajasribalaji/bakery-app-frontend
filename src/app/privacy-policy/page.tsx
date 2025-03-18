@@ -1,7 +1,7 @@
 import Footer from "../components/Footer/Footer";
 import NavBar from "../components/Nav/NavBar";
 
-const Policy = () => {
+const PrivacyPolicy = () => {
     return (
         <div>
             <NavBar />
@@ -119,4 +119,4 @@ const Policy = () => {
     );
 };
 
-export default Policy;
+export default PrivacyPolicy;
